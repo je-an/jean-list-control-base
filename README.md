@@ -3,12 +3,17 @@
 Abstract base class for all controls which are implementing list functionality in jean environment
 
 ## Support
-Supports both CommonJS and AMD eco system. If there is no loader, ListControlBase is registered as a browser variable.
+Supports AMD eco system. If there is no loader, ListControlBase is registered as a browser variable.
 
 ## Code Example
 - Use it as browser variable
 ```js
-var obj = new ListControlBase();
+// Initialise the control
+// ChildListControl inherits ListControlBase constructor and 
+// prototype methods
+var eC = new ChildListControl({  html: "<div id=''>ChildListControl</div>" });
+// Add the control to the document
+document.body.appendChild(ec.element);
 ```
 - Use it with require.js
 ```js
@@ -16,10 +21,7 @@ require(["path/to/ListControlBase"], function(ListControlBase){
     // Work with ListControlBase
 });
 ```
-- Use it with node.js
-```js
-var ListControlBase = require("jean-list-control-base");
-```
+
 ## Installation
 
 `npm install jean-list-control-base --save --legacy-bundling`
@@ -28,46 +30,59 @@ var ListControlBase = require("jean-list-control-base");
 
 Each inheriting control needs to implement the following methods in its prototype:
 
-### ExampleControl.prototype.set(o) 
+### ChildListControl.prototype.add(o) 
 
-Sets data to the control
+Adds an entry to the list control
 
 **Parameters**
-- **o**: `Any` - data to be displayed
+- **o**: `Any` - data of the entry
 
 **Returns**
--  `Boolean` - True, if data is set, false otherwise
+-  `Boolean` - True, if entry is added, false otherwise
 
-### ExampleControl.prototype.get() 
+### ChildListControl.prototype.update(id, o) 
 
-Gets the data from the control
+Updates an entry in the list control
 
-**Returns**
--  `Object` - The data which is currently displayed
-
-### ExampleControl.prototype.clear() 
-
-Clears the data from the control
+**Parameters**
+- **id**: `String` - id of the list entry which shall be updated
+- **o**: `Any` - updated data for the entry identified by `id`
 
 **Returns**
--  `Boolean` - True, if the control is cleared, false otherwise
+-  `Boolean` - True if entry is updated, false otherwise
 
-### ExampleControl.prototype.isDataValid() 
+### ChildListControl.prototype.get() 
 
-Checks if there is valid data within this control.
-E.g. after a user input etc.
+Gets e.g. the selected entries or other values
 
 **Returns**
--  `Boolean` - True, if the data is valid, false otherwise
+-  `Any` - The data which shall be retrieved from the list control
 
-### ExampleControl.prototype.lock() 
+### ChildListControl.prototype.remove(id) 
+
+Removes the entry which are identified by id
+
+**Parameters**
+- **id**: `String` - id of the list entry which shall be removed
+
+**Returns**
+-  `Boolean` - True if the entry is removed, false otherwise
+
+### ChildListControl.prototype.clear() 
+
+Clears all entries in the list control
+
+**Returns**
+-  `Boolean` - True, if entries are cleared, false otherwise
+
+### ChildListControl.prototype.lock() 
 
 Locks the control so that no more interaction can be made.
 
 **Returns**
 -  `Boolean` - True, if the control is locked, false otherwise
 
-### ExampleControl.prototype.unlock() 
+### ChildListControl.prototype.unlock() 
 
 Unlocks the control so that interaction can be made.
 

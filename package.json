@@ -1,6 +1,6 @@
 {
   "name": "jean-list-control-base",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Abstract base class for all controls which are implementing list functionality in jean environment",
   "main": "dist/jean-list-control-base.js",
   "scripts": {
@@ -10,7 +10,13 @@
   "author": "Jeremias Andris",
   "license": "MIT",
   "dependencies": {
-    "jean-amd": "1.0.3"
+    "jean-amd": "1.0.3",
+    "jean-dom-element": "^1.2.1",
+    "jean-failure": "^1.0.1",
+    "jean-inheritance": "^1.0.4",
+    "jean-interface": "^1.1.0",
+    "jean-merge": "^1.0.0",
+    "jean-type-check": "^1.5.1"
   },
   "repository": {
     "type": "git",
