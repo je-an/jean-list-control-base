@@ -1,6 +1,6 @@
 {
   "name": "jean-list-control-base",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Abstract base class for all controls which are implementing list functionality in jean environment",
   "main": "dist/jean-list-control-base.js",
   "scripts": {
