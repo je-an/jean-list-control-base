@@ -25,5 +25,6 @@
         DomElement: "node_modules/jean-dom-element/dist/jean-dom-element",
         DomUtil: "node_modules/jean-dom-util/dist/jean-dom-util",
         Merge: "node_modules/jean-merge/dist/jean-merge",
+        Interface: "node_modules/jean-interface/dist/jean-interface",
     }
 })

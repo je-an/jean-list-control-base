@@ -9,7 +9,7 @@ define([
     Inheritance,
     DomElement,
     Merge,
-    Failure,
+    Failure, 
     TypeCheck,
     Interface
 ) {
